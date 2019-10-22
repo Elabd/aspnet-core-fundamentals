@@ -5,6 +5,13 @@
 }
 
 <h2>Detail</h2>
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">
+        @Model.Message
+    </div>
+
+}
 <h1>@Model.Restaurant.Name</h1>
 <div>
     Id : @Model.Restaurant.Id
