@@ -16,5 +16,6 @@ namespace OdeToFood.Data
 
 
         int Commit();
+        int GetCountOfRestaurants();
     }
 }

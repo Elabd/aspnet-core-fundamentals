@@ -23,29 +23,30 @@
 <table class="table">
     @foreach (var restaurant in Model.Restaurants)
     {
-        <tr>
-            <td>@restaurant.Name</td>
-            <td>@restaurant.Location</td>
-            <td>@restaurant.Cuisine</td>
-            <td>
-                <a class="btn btn-default"
-                   asp-page="./Detail"
-                   asp-route-restaurantId="@restaurant.Id">
-                    <i class="glyphicon glyphicon-zoom-in"></i>
-                </a>
+        <partial name="_Summary" model="restaurant" />
+        @*<tr>
+                <td>@restaurant.Name</td>
+                <td>@restaurant.Location</td>
+                <td>@restaurant.Cuisine</td>
+                <td>
+                    <a class="btn btn-default"
+                       asp-page="./Detail"
+                       asp-route-restaurantId="@restaurant.Id">
+                        <i class="glyphicon glyphicon-zoom-in"></i>
+                    </a>
 
-                <a class="btn btn-default"
-                   asp-page="./Edit"
-                   asp-route-restaurantId="@restaurant.Id">
-                    <i class="glyphicon glyphicon-edit"></i>
-                </a>
-                <a class="btn btn-default"
-                   asp-page="./Delete"
-                   asp-route-restaurantId="@restaurant.Id">
-                    <i class="glyphicon glyphicon-trash"></i>
-                </a>
-            </td>
-        </tr>
+                    <a class="btn btn-default"
+                       asp-page="./Edit"
+                       asp-route-restaurantId="@restaurant.Id">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                    <a class="btn btn-default"
+                       asp-page="./Delete"
+                       asp-route-restaurantId="@restaurant.Id">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>*@
     }
 </table>
 
