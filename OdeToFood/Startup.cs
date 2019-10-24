@@ -51,6 +51,7 @@ namespace OdeToFood
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+            app.Use(SayHelloMiddleware);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -58,6 +59,22 @@ namespace OdeToFood
             app.UseCookiePolicy();
 
             app.UseMvc();
+        }
+
+        private RequestDelegate SayHelloMiddleware(RequestDelegate next)
+        {
+            return async context =>
+            {
+                if (context.Request.Path.StartsWithSegments("/hello"))
+                {
+                    await context.Response.WriteAsync("Hello World . ");
+                }
+                else
+                {
+                    await next(context);
+                }
+            };
+
         }
     }
 }
